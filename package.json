@@ -1,0 +1,28 @@
+{
+  "name": "learning-webpack",
+  "version": "1.0.0",
+  "description": "experimenting with webpack.",
+  "main": "webpack.config.js",
+  "scripts": {
+    "build": "webpack --env.dev",
+    "build:prod": "webpack --env.prod -p",
+    "lint": "eslint .",
+    "start": "webpack-dev-server --env.dev --content-base dist",
+    "prestart": "npm run clean-and-copy",
+    "clean-and-copy": "npm run clean-dist && npm run copy-files",
+    "cleandist": "rimraf dist",
+    "copy-files": "cpy src/index.html src/favicon.ico dist",
+    "test": "karma start",
+    "watch:test": "npm test -- --auto-watch --no-single-run"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/v0lkan/learning-webpack.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/v0lkan/learning-webpack/issues"
+  },
+  "homepage": "https://github.com/v0lkan/learning-webpack#readme"
+}
